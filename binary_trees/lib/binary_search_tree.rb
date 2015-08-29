@@ -39,5 +39,35 @@ class BinarySearchTree
    end
  end
 
+ def include?(data, current_node = @root_node)
+   if current_node
+     if current_node.data != data
+       if current_node.data > data
+         include?(data, current_node.left)
+       elsif current_node.data < data
+         include?(data, current_node.right)
+       end
+     elsif current_node.data == data
+       true
+     else
+       false
+     end
+   else
+     false
+   end
+ end
+
+ def to_array(array = [], current_node = @root_node)
+  if current_node
+    array << current_node.data
+    if !(current_node.left.nil?)
+      to_array(array, current_node.left)
+    end
+    if !(current_node.right.nil?)
+      to_array(array, current_node.right)
+    end
+  end
+  array
+ end
 
 end

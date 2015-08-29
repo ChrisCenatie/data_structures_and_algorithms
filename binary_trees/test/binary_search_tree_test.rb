@@ -71,6 +71,13 @@ describe BinarySearchTree do
       @tree.push(7)
       assert_equal 7, @tree.root_node.right.right.data
     end
+
+    it "continues adding larger data to the right and left down the tree" do
+      @tree.push(5) #root
+      @tree.push(8)
+      @tree.push(7)
+      assert_equal 7, @tree.root_node.right.left.data
+    end
   end
 
   describe "#count" do
@@ -100,13 +107,11 @@ describe BinarySearchTree do
     end
 
     it "is true for the data of the root node" do
-      skip
       @tree.push(4)
       assert_equal true, @tree.include?(4)
     end
 
     it "finds data lower in the tree" do
-      skip
       @tree.push(4)
       @tree.push(6)
       @tree.push(3356)
@@ -120,12 +125,10 @@ describe BinarySearchTree do
 
   describe "#to_array" do
     it "is empty for empty tree" do
-      skip
       assert_equal [], @tree.to_array
     end
 
     it "pulls data from the tree into an array, starting with the left branches of the tree" do
-      skip
       @tree.push(5)
       @tree.push(4)
       @tree.push(6)
