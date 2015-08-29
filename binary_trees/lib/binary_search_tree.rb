@@ -70,4 +70,48 @@ class BinarySearchTree
   array
  end
 
+ def sort
+   to_array.sort
+ end
+
+ def min(current_node = @root_node)
+   if current_node
+     if current_node.left.nil?
+       current_node.data
+     else
+       min(current_node.left)
+     end
+   else
+     nil
+   end
+ end
+
+ def max(current_node = @root_node)
+   if current_node
+     if current_node.right.nil?
+       current_node.data
+     else
+       max(current_node.right)
+     end
+   else
+     nil
+   end
+ end
+
+ def post_ordered(array = [], current_node = @root_node)
+   if current_node == @root_node && !@root_node.nil?
+     array << current_node.data
+   end
+   if current_node
+     if !(current_node.right.nil?)
+       array << current_node.right.data
+     end
+     if !(current_node.left.nil?)
+       array << current_node.left.data
+     end
+     post_ordered(array, current_node.left)
+   end
+   array.reverse
+ end
+
 end

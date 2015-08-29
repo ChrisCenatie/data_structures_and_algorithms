@@ -140,12 +140,10 @@ describe BinarySearchTree do
 
   describe "#sort" do
     it "returns empty array for empty tree" do
-      skip
       assert_equal [], @tree.sort
     end
 
     it "returns a sorted array of the tree elements" do
-      skip
       @tree.push(5)
       @tree.push(4)
       @tree.push(6)
@@ -161,12 +159,10 @@ describe BinarySearchTree do
     # note that given the inherent left/right structure of a binary search tree
     # it is possible to find the min or max elements without searching the entire tree
     it "is nil for an empty tree" do
-      skip
       assert_nil @tree.min
     end
 
     it "finds the minimum value in the tree" do
-      skip
       @tree.push(5)
       @tree.push(4)
       @tree.push(6)
@@ -181,12 +177,10 @@ describe BinarySearchTree do
     # note that given the inherent left/right structure of a binary search tree
     # it is possible to find the min or max elements without searching the entire tree
     it "is nil for an empty tree" do
-      skip
       assert_nil @tree.max
     end
 
     it "finds the minimum value in the tree" do
-      skip
       @tree.push(5)
       @tree.push(4)
       @tree.push(6)
@@ -210,12 +204,10 @@ describe BinarySearchTree do
     # should produce post_ordered output [1,3,2,5,4]
 
     it "should be empty for empty tree" do
-      skip
       assert_equal [], @tree.post_ordered
     end
 
     it "should give back elements in post-order" do
-      skip
       @tree.push(4)
       @tree.push(2)
       @tree.push(5)
